@@ -38,6 +38,11 @@
   \end{tabular*}
 }
 
+% Achievements (Subscection for achievements for organization)
+\newcommand{\achievements}[1]{
+  \textbf{\small #1}:
+}
+
 % Items (list of accomplishments in an organization)
 \newcommand{\items}{\begin{itemize}[leftmargin=*]}
 \newcommand{\itemsEnd}{\end{itemize}}
@@ -52,7 +57,7 @@
 % ----- SKILLS -----
 \section{Skills}
   \begin{minipage}[t]{0.6\linewidth}
-    {\bfseries Techonolgies:} \BLOCK{for i in range(0, skills.technologies|length-1)}\VAR{skills.technologies[i]}, \BLOCK{endfor}\VAR{skills.technologies[skills.technologies|length-1]}
+    {\bfseries Technologies:} \BLOCK{for i in range(0, skills.technologies|length-1)}\VAR{skills.technologies[i]}, \BLOCK{endfor}\VAR{skills.technologies[skills.technologies|length-1]}
   \end{minipage}
   \hspace{0.04\linewidth}
   \begin{minipage}[t]{0.35\linewidth}
@@ -66,13 +71,26 @@
     {\VAR{job.name}}{\VAR{job.loc}}
     {\VAR{job.title}}{\VAR{job.date}}
     \items
-      %% for achievement in job.achievements
+      %% for achievement in job.main
       %% for name, item in achievement.items()
       \vspace{-5pt}
       \item{{\slshape \VAR{name}:} \VAR{item}}
       %% endfor
       %% endfor
     \itemsEnd
+    %% for section in job.subsections
+    %% for title, achievements in section.items()
+    \achievements{\VAR{title}} 
+    \items
+      %% for achievement in achievements
+      %% for name, item in achievement.items()
+      \vspace{-5pt}
+      \item{{\slshape \VAR{name}:} \VAR{item}}
+      %% endfor
+      %% endfor
+    \itemsEnd
+    %% endfor
+    %% endfor
   %% endfor
 
 % ----- VOLUNTEERISM -----
