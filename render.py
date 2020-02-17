@@ -19,22 +19,22 @@ def escapeLatexChars(val):
 
 # Taken from http://eosrei.net/articles/2015/11/latex-templates-python-and-jinja2-generate-pdfs
 CUSTOM_LATEX_AUTOESCAPE = select_autoescape(
-	enabled_extensions=['tex'],
+    enabled_extensions=['tex'],
     disabled_extensions=[],
     default_for_string=False,
     default=False
 )
 
 BUILT_IN_LATEX_AUTOESCAPE = select_autoescape(
-	enabled_extensions=['html', 'htm', 'xml'],
+    enabled_extensions=['html', 'htm', 'xml'],
     disabled_extensions=['tex'],
     default_for_string=True,
-	default=True
+    default=True
 )
 
 LATEX_OPS = {
-	'custom_select_autoescape': CUSTOM_LATEX_AUTOESCAPE,
-   	'custom_autoescape_filter_name': 'escapeLatexChars',
+    'custom_select_autoescape': CUSTOM_LATEX_AUTOESCAPE,
+    'custom_autoescape_filter_name': 'escapeLatexChars',
     'custom_autoescape_filter_func': escapeLatexChars
 }
 

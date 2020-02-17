@@ -41,6 +41,6 @@ def suite():
     return suite
 
 if __name__ == '__main__':
-	unittest.main(failfast=True)
-	runner = unittest.TextTestRunner()
-	runner.run(suite())
+    unittest.main(failfast=True)
+    runner = unittest.TextTestRunner()
+    runner.run(suite())
